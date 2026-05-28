@@ -271,10 +271,11 @@ def retry_with_backoff(
 def batch_compare(prompts: list[str]) -> list[dict]:
     results = []
     for prompt in prompts:
-        result = compare_models(prompt)
+        result = compare_models()
         result["prompt"] = prompt
         results.append(result)
     return results
+
 
 # ---------------------------------------------------------------------------
 # Bonus Task C — Format comparison table
@@ -293,7 +294,7 @@ def format_comparison_table(results: list[dict]) -> str:
     MODEL_LABELS = {
         "gpt4o"       : "GPT-4o",
         "gpt4o_mini"  : "GPT-4o Mini",
-        "gemini_flash": "Gemini 2.5 Flash",
+        "gemini_flash": "Gemini-Flash",
     }
  
     rows = []
